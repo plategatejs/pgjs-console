@@ -1,5 +1,4 @@
 # pgjs-console
 
-
 ## License
-MIT
+[MIT](license.md)
