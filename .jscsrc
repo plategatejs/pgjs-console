@@ -1,0 +1,6 @@
+{
+  "preset": "google",
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "disallowSpacesInFunctionExpression": null,
+  "disallowSpacesInFunctionDeclaration": null
+}
