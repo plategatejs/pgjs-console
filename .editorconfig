@@ -1,5 +1,5 @@
 root = true
 
-[*.js]
+[*.{js,jade}]
 indent_style = space
 indent_size = 2

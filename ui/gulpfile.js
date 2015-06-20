@@ -3,7 +3,7 @@ var path = require('path');
 var gulp = require('gulp');
 
 var tasks = includeAll({
-    dirname: path.resolve('assets/tasks'),
+    dirname: path.resolve(__dirname, 'assets/tasks'),
     filter: /(.+)\.js$/
 });
 

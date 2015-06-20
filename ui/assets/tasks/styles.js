@@ -6,8 +6,8 @@ var sourcemaps = require('gulp-sourcemaps'),
 
 var isEnvDevelopment = !!process.env.NODE_ENV && process.env.NODE_ENV === 'development';
 
-var STYLES_DIR = 'assets/css',
-  DIST_DIR = 'assets/dist';
+var STYLES_DIR = 'css',
+  DIST_DIR = 'dist';
 
 var styles = [{
   src: 'main.less',
@@ -17,7 +17,7 @@ var styles = [{
 module.exports = function (gulp) {
   var task = function () {
     styles.forEach(function (style) {
-      var stream = gulp.src(path.resolve(STYLES_DIR, style.src));
+      var stream = gulp.src(path.resolve(__dirname, '..', STYLES_DIR, style.src));
 
       stream = stream
         .pipe(less())
@@ -32,7 +32,7 @@ module.exports = function (gulp) {
         stream = stream.pipe(minify());
       }
 
-      stream.pipe(gulp.dest(DIST_DIR));
+      stream.pipe(gulp.dest(path.resolve(__dirname, '..', DIST_DIR)));
     });
   };
 

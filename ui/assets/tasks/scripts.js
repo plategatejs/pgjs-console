@@ -7,8 +7,8 @@ var sourcemaps = require('gulp-sourcemaps'),
 
 var isEnvDevelopment = !!process.env.NODE_ENV && process.env.NODE_ENV === 'development';
 
-var SCRIPTS_DIR = 'assets/js',
-  DIST_DIR = 'assets/dist';
+var SCRIPTS_DIR = 'js',
+  DIST_DIR = 'dist';
 
 var scripts = [{
   src: 'main.js',
@@ -25,7 +25,7 @@ module.exports = function (gulp) {
   var task = function () {
     scripts.forEach(function (script) {
       var stream = browserify({
-        entries: path.resolve(SCRIPTS_DIR, script.src),
+        entries: path.resolve(__dirname, '..', SCRIPTS_DIR, script.src),
         debug: isEnvDevelopment
       }).bundle();
 
@@ -42,7 +42,7 @@ module.exports = function (gulp) {
         stream = stream.pipe(uglify(config));
       }
 
-      stream.pipe(gulp.dest(DIST_DIR));
+      stream.pipe(gulp.dest(path.resolve(__dirname, '..', DIST_DIR)));
     });
   };
 

@@ -3,6 +3,6 @@ var jscs = require('gulp-jscs'),
 
 module.exports = function (gulp) {
   gulp.task('jscs', function () {
-    gulp.src(path.resolve('assets/js/**.js')).pipe(jscs());
+    gulp.src(path.resolve(__dirname, '../js/**.js')).pipe(jscs());
   });
 };
