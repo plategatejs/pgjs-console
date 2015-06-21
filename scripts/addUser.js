@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// commandline script for adding users to the system
 
 var path = require('path');
 

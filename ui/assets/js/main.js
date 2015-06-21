@@ -1,1 +1,1 @@
-var angular = require('../lib/angular');
+require('./angular');
