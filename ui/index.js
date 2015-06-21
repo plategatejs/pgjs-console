@@ -7,6 +7,7 @@ module.exports = (function () {
 
   // static content serving
   app.use('/static', express.static(path.resolve(__dirname, 'assets/dist')));
+  app.use('/static', express.static(path.resolve(__dirname, 'assets/static')));
 
   // setting jade view engine up
   app.set('view engine', 'jade');

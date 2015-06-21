@@ -29,7 +29,7 @@ module.exports = function (gulp) {
           .pipe(sourcemaps.write());
       }
       else {
-        stream = stream.pipe(minify());
+        stream = stream.pipe(minify({processImport: false}));
       }
 
       stream.pipe(gulp.dest(path.resolve(__dirname, '..', DIST_DIR)));

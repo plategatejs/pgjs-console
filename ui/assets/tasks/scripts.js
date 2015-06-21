@@ -18,7 +18,7 @@ var scripts = [{
 var config = {
   compress: true,
   mangle: true,
-  preserveComments: 'some'
+  preserveComments: false
 };
 
 module.exports = function (gulp) {
