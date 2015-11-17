@@ -1,12 +1,12 @@
 {
-  "server": {
+  "http": {
     "port": 8080
   },
   "mongodb": {
-    "host": "example.com",
-    "port": 1337,
-    "database": "database",
-    "username": "username",
-    "password": "password"
+    "host": "localhost",
+    "port": 27017,
+    "database": "pgjs",
+    "username": "pgjs",
+    "password": "pgjs"
   }
 }
