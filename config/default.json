@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "http": {
-    "port": 8080
+    "port": 7070
   },
   "mongodb": "localhost:27017/pgjs",
   "logger": {
