@@ -2,8 +2,8 @@
 
 import Express from 'express';
 import config from 'config';
-import routing from './routing';
 import logger from './logger';
+import routing from './routing';
 
 export default () => {
   const app = new Express();
