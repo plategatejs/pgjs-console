@@ -1,13 +1,13 @@
 {
-  "version": "1.0.0",
+  "version": "0.1.0",
   "http": {
     "port": 8080
   },
-  "mongodb": {
-    "host": "localhost",
-    "port": 27017,
-    "database": "pgjs",
-    "username": "pgjs",
-    "password": "pgjs"
+  "mongodb": "localhost:27017",
+  "logger": {
+    "console": {
+      "level": "info",
+      "colorize": true
+    }
   }
 }
