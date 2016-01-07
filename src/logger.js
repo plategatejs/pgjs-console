@@ -1,6 +1,6 @@
 'use strict';
 
-import winston, { Logger } from 'winston';
+import winston from 'winston';
 import config from 'config';
 
 const name = 'runtime';
