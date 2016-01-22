@@ -4,6 +4,10 @@ import Express from 'express';
 import config from 'config';
 import logger from './logger';
 import routing from './routing';
+import {
+  notFoundHandler,
+  internalServerErrorHandler
+} from './middleware';
 
 export default () => {
   const app = new Express();
@@ -12,6 +16,7 @@ export default () => {
   app
     .disable('x-powered-by')
     .use(routing)
-    .use((req, res) => res.status(404).send())
+    .use(internalServerErrorHandler)
+    .use(notFoundHandler)
     .listen(port, () => logger.info(`server up on port ${port}`));
 };

@@ -1,6 +1,6 @@
 {
   "name": "pgjs-console",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "pgjs-console",
   "author": "PlateGateJS",
   "license": "MIT",
@@ -16,8 +16,10 @@
     "babel-preset-es2015": "6.3.13",
     "babel-preset-stage-2": "6.3.13",
     "babel-register": "6.3.13",
+    "body-parser": "1.14.2",
     "config": "1.17.1",
     "express": "4.13.3",
+    "jsonschema": "1.0.3",
     "winston": "2.1.1"
   }
 }
