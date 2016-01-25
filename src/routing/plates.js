@@ -31,12 +31,15 @@ router.post('/plates/check', bodyParser.json(), badRequestHandler, (req, res, ne
 
   const validation = (new Validator).validate(plates, {
     type: 'array',
-    items: { type: 'string' }
+    items: { type: 'string' },
+    minItems: 1
   });
 
   if (validation.errors.length) {
     return res.status(400).end();
   }
+
+  logger.info(`checking plates: ${plates.join(', ')}.`);
 
   Plate.findOne({ identifier: { $in: plates } }, (error, plate) => {
     if (error) {
@@ -47,7 +50,7 @@ router.post('/plates/check', bodyParser.json(), badRequestHandler, (req, res, ne
       return res.status(403).end();
     }
 
-    return res.status(200).end();
+    return res.status(200).json(plate.identifier);
   });
 });
 

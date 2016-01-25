@@ -1,13 +1,13 @@
 {
-  "version": "0.1.0",
   "http": {
-    "port": 7070
+    "port": 8600
   },
-  "mongodb": "localhost:27017/pgjs",
+  "mongodb": "pgjs-mongo:27017/pgjs",
   "logger": {
     "console": {
       "level": "info",
-      "colorize": true
+      "colorize": true,
+      "timestamp": true
     }
   }
 }

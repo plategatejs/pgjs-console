@@ -2,8 +2,8 @@
 
 import { Router } from 'express';
 import config from 'config';
+import { version } from '../../package.json';
 
-const version = config.get('version');
 const router = new Router();
 
 router.get('/', (req, res) => res.json({version}).end());

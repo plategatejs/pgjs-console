@@ -10,7 +10,7 @@ import {
 } from './middleware';
 
 export default () => {
-  const app = new Express();
+  const app = new Express;
   const port = config.get('http.port');
 
   app
