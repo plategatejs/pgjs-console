@@ -1,12 +1,12 @@
 {
   "name": "pgjs-console",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "pgjs-console",
   "author": "PlateGateJS",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/plategatejs/pgjs-console.git"
+    "url": "git+https://github.com/plategatejs/pgjs-console.git"
   },
   "main": "src/index.js",
   "scripts": {
