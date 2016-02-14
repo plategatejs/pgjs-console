@@ -9,20 +9,56 @@ import { badRequestHandler } from '../middleware';
 
 const router = new Router();
 
-router.get('/plates/:identifier', (req, res, next) => {
-  const { identifier } = req.params;
+router.get('/plates', (req, res, next) => {
   const projection = { __v: false, _id: false };
 
-  Plate.findOne({ identifier }, projection, (error, plate) => {
+  Plate.find({}, projection, (error, plates) => {
     if (error) {
       return next(error);
     }
 
-    if (!plate) {
-      return res.status(404).end();
+    return res.status(200).json(plates);
+  });
+});
+
+router.delete('/plates/:identifier', (req, res, next) => {
+  const { identifier } = req.params;
+
+  Plate.remove({ identifier }, (error) => {
+    if (error) {
+      return next(error);
     }
 
-    return res.status(200).json(plate).end();
+    return res.status(200).end();
+  });
+});
+
+router.post('/plates', bodyParser.json(), badRequestHandler, (req, res, next) => {
+  const validation = (new Validator).validate(req.body, {
+    type: 'object',
+    properties: {
+      identifier: {
+        type: 'string',
+        minLength: 3
+      }
+    },
+    required: [
+      'identifier'
+    ]
+  });
+
+  if (validation.errors.length) {
+    return res.status(400).end();
+  }
+
+  const plate = new Plate(req.body);
+
+  plate.save((error) => {
+    if (error) {
+      return next(error);
+    }
+
+    return res.status(201).end();
   });
 });
 

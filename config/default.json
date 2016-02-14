@@ -2,6 +2,8 @@
   "http": {
     "port": 8600
   },
+  "gate": "http://pgjs-gate:8200",
+  "camera": "http://pgjs-camera:8400",
   "mongodb": "pgjs-mongo:27017/pgjs",
   "logger": {
     "console": {
